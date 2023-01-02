@@ -3,9 +3,8 @@ FROM vm/ubuntu:18.04
 
 # To note: Layerfiles create entire VMs, *not* containers!
 
-# Install python 3 & postgresql
-RUN apt-get update && \\
-    apt-get install python3-pip python3-dev
+# Install python 3
+RUN apt-get update && apt-get install python3-pip -y
 
 # Install django & postgresql python driver
 RUN pip3 install fastapi uvicorn
