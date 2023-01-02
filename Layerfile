@@ -11,9 +11,9 @@ RUN pip3 install fastapi uvicorn
 
 
 # This line copies the whole repository to /root in the runner
-COPY / /root
+COPY / /var/app
 
-WORKDIR /root
+WORKDIR /var/app
 
 # This line runs the example webserver
 RUN BACKGROUND uvicorn main:app
