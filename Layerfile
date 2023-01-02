@@ -1,4 +1,4 @@
-FROM spb/python-fastapi:v1.0.0
+FROM sintezcs/python-fastapi:v1.0.0
 
 # This line copies the whole repository to /root in the runner
 COPY / /var/app
