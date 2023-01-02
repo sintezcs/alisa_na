@@ -6,6 +6,10 @@ FROM webapp.io/docker:20.10
 # This line copies the whole repository to /root in the runner
 COPY / /root
 
+WORKDIR /root
+
+RUN pip3 install fastapi uvicorn
+
 # This line runs the example webserver
 RUN BACKGROUND uvicorn main:app
 
