@@ -1,14 +1,4 @@
-#This is an example webapp.io configuration for Django!
-FROM vm/ubuntu:18.04
-
-# To note: Layerfiles create entire VMs, *not* containers!
-
-# Install python 3
-RUN apt-get update && apt-get install python3-pip -y
-
-# Install django & postgresql python driver
-RUN pip3 install fastapi uvicorn
-
+FROM spb/python-fastapi:v1.0.0
 
 # This line copies the whole repository to /root in the runner
 COPY / /var/app
