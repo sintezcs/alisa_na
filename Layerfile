@@ -1,4 +1,4 @@
-FROM sintezcs/fastapi:v1.0.4
+FROM sintezcs/fastapi:v1.0.5
 
 # This line copies the whole repository to /root in the runner
 COPY / /var/app
