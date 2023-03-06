@@ -1,0 +1,15 @@
+[Unit]
+Description=Alisa ChatGPT Bot
+Requires=alisa-worker.service
+After=alisa-worker.service network.target
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/var/app/alisa
+Environment="PATH=/var/app/alisa/venv/bin" "OPENAI_API_KEY=YOUR_API_KEY"
+ExecStart=/var/app/alisa/venv/bin/gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000 --access-logfile /var/log/alisa/access.log --error-logfile /var/log/alisa/error.log
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

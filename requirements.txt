@@ -1,0 +1,7 @@
+fastapi==0.88.0
+openai==0.27.0
+rq==1.11.1
+tiktoken==0.2.0
+redis==4.4.0
+gunicorn==20.1.0
+uvicorn==0.20.0

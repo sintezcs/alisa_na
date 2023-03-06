@@ -1,0 +1,14 @@
+[Unit]
+Description=Alisa ChatGPT Worker
+After=network.target
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/var/app/alisa
+Environment="PATH=/var/app/alisa/venv/bin" "OPENAI_API_KEY=YOUR_API_KEY"
+ExecStart=/var/app/alisa/venv/bin/rq worker --url redis://localhost:6379
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
